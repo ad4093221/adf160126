@@ -1,0 +1,147 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "datafactorydemotask210126"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorage220126_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage220126'"
+		},
+		"AzureSqlDatabasesink220126_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabasesink220126'"
+		},
+		"Sink_LinkedService_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Sink_LinkedService'"
+		},
+		"Source_LinkedService_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Source_LinkedService'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storagebrowsejobs160126.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage220126_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://azureblobstorage210126.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabasesink220126_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "db210126.database.windows.net"
+		},
+		"AzureSqlDatabasesink220126_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "dbtaskbrowsejobs210126"
+		},
+		"AzureSqlDatabasesink220126_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin210126"
+		},
+		"Sink_LinkedService_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "demobrowsejobs190126.database.windows.net"
+		},
+		"Sink_LinkedService_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db200126"
+		},
+		"Sink_LinkedService_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin190126"
+		},
+		"Source_LinkedService_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storagebrowsejobs160126.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "datafactorydemotask210126_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDataLakeStorage220126_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage220126_accountKey')]"
+					},
+					"AzureSqlDatabasesink220126_password": {
+						"value": "[parameters('AzureSqlDatabasesink220126_password')]"
+					},
+					"Sink_LinkedService_password": {
+						"value": "[parameters('Sink_LinkedService_password')]"
+					},
+					"Source_LinkedService_accountKey": {
+						"value": "[parameters('Source_LinkedService_accountKey')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage220126_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage220126_properties_typeProperties_url')]"
+					},
+					"AzureSqlDatabasesink220126_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabasesink220126_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabasesink220126_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabasesink220126_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabasesink220126_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabasesink220126_properties_typeProperties_userName')]"
+					},
+					"Sink_LinkedService_properties_typeProperties_server": {
+						"value": "[parameters('Sink_LinkedService_properties_typeProperties_server')]"
+					},
+					"Sink_LinkedService_properties_typeProperties_database": {
+						"value": "[parameters('Sink_LinkedService_properties_typeProperties_database')]"
+					},
+					"Sink_LinkedService_properties_typeProperties_userName": {
+						"value": "[parameters('Sink_LinkedService_properties_typeProperties_userName')]"
+					},
+					"Source_LinkedService_properties_typeProperties_url": {
+						"value": "[parameters('Source_LinkedService_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
