@@ -16,21 +16,23 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "Json4",
+						"referenceName": "DelimitedText6",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"itemName",
+						"columnCount",
 						"exists",
+						"itemName",
 						"itemType",
-						"lastModified"
+						"lastModified",
+						"size"
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
-						"type": "JsonReadSettings"
+						"type": "DelimitedTextReadSettings"
 					}
 				}
 			}
