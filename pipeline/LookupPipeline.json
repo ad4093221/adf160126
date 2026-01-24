@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT TOP 5 employee_id\nFROM dbo.employee;",
+						"sqlReaderQuery": "SELECT TOP 8 employee_id\nFROM dbo.employee;",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
