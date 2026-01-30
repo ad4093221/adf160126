@@ -1,0 +1,44 @@
+{
+	"name": "DelimitedText16",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "large_employee_dataset.csv",
+				"fileSystem": "democontainer150126"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "{\"employee_id\":\"1001\"",
+				"type": "String"
+			},
+			{
+				"name": "\"name\":\"Vikas Jain\"",
+				"type": "String"
+			},
+			{
+				"name": "\"department\":\"Finance\"",
+				"type": "String"
+			},
+			{
+				"name": "\"salary\":\"82393\"",
+				"type": "String"
+			},
+			{
+				"name": "\"joining_date\":\"2018-03-03\"}",
+				"type": "String"
+			}
+		]
+	}
+}
