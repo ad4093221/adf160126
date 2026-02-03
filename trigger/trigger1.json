@@ -6,7 +6,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "Foreach2pipeline",
+					"referenceName": "Foreach2pipelineparallelcopying",
 					"type": "PipelineReference"
 				}
 			}
